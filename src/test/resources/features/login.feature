@@ -7,7 +7,6 @@ Feature: User should be able to login
     When user logs in  with valid credentials
     Then Account summary page should be displayed.
 
-@wip
   Scenario Outline: Users with wrong credentials should not be able to login.
     When user logs in following wrong credential "<Username>" "<Password>"
 
