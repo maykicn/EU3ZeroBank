@@ -61,6 +61,8 @@ public class LoginStepDefs {
         LoginPage loginPage=new LoginPage();
         String actualError=loginPage.alertError.getText();
         Assert.assertEquals(expectedError,actualError);
+        System.out.println("PASSES");
+
 
     }
 
