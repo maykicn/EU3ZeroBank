@@ -5,18 +5,20 @@ import com.zerobank.utilities.BrowserUtils;
 import com.zerobank.utilities.Driver;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 import java.util.List;
 
 public class AccountSummaryDefs {
-    @Then("Account summary page should have the title {string}")
-    public void account_summary_page_should_have_the_title(String actualTitle) {
 
+
+
+    @Then("page should have the title {string}")
+    public void page_should_have_the_title(String string) {
+        String actualTitle=string;
         String expectedTitle= Driver.get().getTitle();
         Assert.assertEquals(expectedTitle,actualTitle);
-
-
     }
 
     @Then("Account types should be {string}")
