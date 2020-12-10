@@ -20,9 +20,10 @@ public class LoginStepDefs {
         String url = ConfigurationReader.get("url");
         //WebDriver driver = Driver.get();
         Driver.get().get(url);
-        BrowserUtils.waitFor(2);
+        BrowserUtils.waitFor(1);
         LoginPage loginPage=new LoginPage();
         loginPage.signinButton.click();
+        BrowserUtils.waitFor(1);
 
     }
 
