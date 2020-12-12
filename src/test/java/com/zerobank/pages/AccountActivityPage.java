@@ -15,6 +15,22 @@ public class AccountActivityPage {
     @FindBy(xpath = "//li[@id='account_activity_tab']/a")
     public WebElement accountActivityTab;
 
+    @FindBy(xpath = "//select[@id='aa_accountId']")
+    public WebElement accountDropdown;
+
+    @FindBy(xpath = "//div[@id='all_transactions_for_account']/table//th")
+    public WebElement transactionsTableHeader;
+
+
+
+
+
+
+
+
+
+
+
 
 
 

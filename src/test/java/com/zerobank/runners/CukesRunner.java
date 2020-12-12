@@ -11,7 +11,7 @@ import org.junit.runner.RunWith;
                 "html:target/default-html-reports"},
         features = "src/test/resources/features",
         glue = "com/zerobank/stepdefinitions",
-        dryRun = false,
+        dryRun = true,
         tags = "@wip"
 )
 public class CukesRunner {
