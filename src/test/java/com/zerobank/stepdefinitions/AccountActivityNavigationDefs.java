@@ -48,6 +48,10 @@ public class AccountActivityNavigationDefs {
             AccountActivityNavigationPage accountActivityNavigationPage=new AccountActivityNavigationPage();
             accountActivityNavigationPage.loan.click();
 
+        }else if(link.equalsIgnoreCase("credit card")){
+            AccountActivityNavigationPage accountActivityNavigationPage=new AccountActivityNavigationPage();
+            accountActivityNavigationPage.creditCard.click();
+
         }
 
 
@@ -57,6 +61,7 @@ public class AccountActivityNavigationDefs {
 
     @Then("the {string} should be displayed")
     public void the_should_be_displayed(String expectedPage) {
+        BrowserUtils.waitForPageToLoad(3);
         String key=Driver.get().getCurrentUrl();
 
         String main="http://zero.webappsecurity.com/bank/";

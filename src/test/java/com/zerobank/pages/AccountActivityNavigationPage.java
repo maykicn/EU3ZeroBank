@@ -23,9 +23,8 @@ public class AccountActivityNavigationPage {
     public WebElement loan;
 
 
-
-
-
+    @FindBy(xpath = "//a[contains(.,'Credit Card')]")
+    public WebElement creditCard;
 
 
 
