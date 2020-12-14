@@ -18,11 +18,16 @@ import java.util.List;
 public class AccountActivityDefs {
 
     @When("the user click on {string}")
-    public void the_user_click_on(String string) {
+    public void the_user_click_on(String tab) {
+        if(tab.equalsIgnoreCase("Account Activity")){
 
-        AccountActivityPage accountActivityPage= new AccountActivityPage();
-        BrowserUtils.waitForPresenceOfElement(By.xpath("//li[@id='account_activity_tab']/a"),2);
-        accountActivityPage.accountActivityTab.click();
+            AccountActivityPage accountActivityPage= new AccountActivityPage();
+            BrowserUtils.waitForPresenceOfElement(By.xpath("//li[@id='account_activity_tab']/a"),2);
+            accountActivityPage.accountActivityTab.click();
+
+        }
+
+
 
     }
 
