@@ -1,6 +1,5 @@
 Feature: Navigating to specific accounts in Accounts Activity
 
-  @wip
   Scenario Outline: Savings account redirect
     Given the user is logged in
     When the user clicks on "<link>" link on the Account Summary page

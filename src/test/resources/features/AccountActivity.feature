@@ -4,7 +4,6 @@ Feature:
     Given the user  is on the login page
     When user logs in  with valid credentials
     And the user click on "Account Activity"
-
   Scenario:Page title
     Then page should have the title "Zero – Account activity"
 
