@@ -5,7 +5,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class FindTransactionsPage {
+import java.util.List;
+
+public class FindTransactionsPage extends BasePage {
     public FindTransactionsPage(){
         PageFactory.initElements(Driver.get(), this);
     }
@@ -17,6 +19,21 @@ public class FindTransactionsPage {
 
     @FindBy(xpath="//input[@id='aa_fromDate']")
     public WebElement dateFromInput;
+
+    @FindBy(xpath="//input[@id='aa_toDate']")
+    public WebElement dateToInput;
+
+    @FindBy(xpath="//button[@type='submit']")
+    public WebElement findButton;
+
+
+    @FindBy(xpath="//div[@id='filtered_transactions_for_account']/table/tbody/tr")
+    public List<WebElement> tableRow;
+
+
+
+
+
 
 
 
