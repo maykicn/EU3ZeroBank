@@ -12,6 +12,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.w3c.dom.ls.LSOutput;
 
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -45,29 +46,16 @@ public class FindTransactionsDefs {
 
     @Then("results table should only show transactions dates between {string} to {string}")
     public void results_table_should_only_show_transactions_dates_between_to(String from, String to) {
+
         String date;
         FindTransactionsPage findTransactionsPage=new FindTransactionsPage();
         for(int i=1;i<=findTransactionsPage.tableRow.size();i++){
 
-            WebElement dummy=Driver.get().findElement(By.xpath("//div[@id='filtered_transactions_for_account']/table/tbody/tr["+i+"]/td[1]"));
-            date=dummy.getText();
-            System.out.println("date = " + date);
+            WebElement dateColoumn=Driver.get().findElement(By.xpath("//div[@id='filtered_transactions_for_account']/table/tbody/tr["+i+"]/td[1]"));
+            date=dateColoumn.getText();
             Assert.assertTrue(findTransactionsPage.isBetween(date,from,to));
         }
 
-        /*
-        String date="2012-09-05";
-        System.out.println("new FindTransactionsPage().isBetween(date,from,to) = " + new FindTransactionsPage().isBetween(date, from, to));
-
-
-        WebElement date= Driver.get().findElement(By.xpath("//div[@id='filtered_transactions_for_account']/table/tbody/tr[1]/td["+1+"]"));
-        System.out.println("date.getText() = " + date.getText());
-
-        List<WebElement> table=Driver.get().findElements(By.xpath("//div[@id='filtered_transactions_for_account']/table/tbody/tr"));
-        System.out.println("table.size() = " + table.size());
-
-        FindTransactionsPage findTransactionsPage=new FindTransactionsPage();
-        System.out.println("findTransactionsPage.tableRow.size() = " + findTransactionsPage.tableRow.size());*/
 
 
     }
@@ -75,8 +63,11 @@ public class FindTransactionsDefs {
 
 
     @Then("the results should be sorted by most recent date")
-    public void the_results_should_be_sorted_by_most_recent_date() {
+    public void the_results_should_be_sorted_by_most_recent_date() throws ParseException {
 
+
+     FindTransactionsPage findTransactionsPage=new FindTransactionsPage();
+     findTransactionsPage.mostRecentDate();
 
     }
 
@@ -85,9 +76,14 @@ public class FindTransactionsDefs {
 
 
     @Then("the results table should only not contain transactions dated {string}")
-    public void the_results_table_should_only_not_contain_transactions_dated(String string) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    public void the_results_table_should_only_not_contain_transactions_dated(String date) {
+
+
+        BrowserUtils.waitFor(2);
+
+        FindTransactionsPage findTransactionsPage=new FindTransactionsPage();
+        findTransactionsPage.isContain(date);
+
     }
 
 
