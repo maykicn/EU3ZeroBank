@@ -40,7 +40,7 @@ public class BasePage {
         return date[2];
     }
 
-    public boolean isBetween(String date, String from, String to) {
+    public boolean dateIsBetween(String date, String from, String to) {
 
         Boolean flag=false;
 
@@ -126,7 +126,7 @@ public class BasePage {
     }
 
 
-    public boolean isContain(String date){
+    public boolean isContainInTable(String date){
 
         FindTransactionsPage findTransactionsPage=new FindTransactionsPage();
         int size=findTransactionsPage.tableRow.size();

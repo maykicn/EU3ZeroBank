@@ -30,6 +30,23 @@ public class FindTransactionsPage extends BasePage {
     @FindBy(xpath="//div[@id='filtered_transactions_for_account']/table/tbody/tr")
     public List<WebElement> tableRow;
 
+    @FindBy(xpath=" //input[@id='aa_description']")
+    public WebElement descriptionInput;
+
+    @FindBy(xpath="//option[@value='DEPOSIT']")
+    public WebElement optionDeposit;
+
+    @FindBy(xpath="//option[@value='WITHDRAWAL']")
+    public WebElement optionWithdrawal;
+
+
+
+
+
+
+
+
+
 
 
 
